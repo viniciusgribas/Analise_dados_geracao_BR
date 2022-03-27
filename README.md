@@ -1,4 +1,18 @@
-# Analise_Espacial
+# Análise Exploratória Espacial - Dados de Geração da ANEEL [BR 🇧🇷]
+
+---
+
+# Vinicius Guerra e Ribas -  Energy Sector Analyst
+[Energy Engineer (UnB)](https://www.unb.br/) │ [Data Scientist and Analytics (USP)](https://www5.usp.br/)
+
+
+## [:email:E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BANALISE-ESPACIAL-ANEEL%5D%20-%20Contact)│ [:dart: Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │[:octocat: GitHub](https://github.com/viniciusgribas) 
+
+---
+
+# [:computer: Project Notebook](https://github.com/viniciusgribas/Analise_Espacial/blob/main/Master_Code.ipynb)
+
+
 
 Fontes:
 
