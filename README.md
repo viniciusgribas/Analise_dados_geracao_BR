@@ -1,4 +1,4 @@
-# Graphical and Spatial Exploratory Analysis - Brazil Electricity Generation Data from ANEEL [EN 🇬🇧] 
+
 
 ---
 
@@ -13,8 +13,9 @@
 # [Project Notebook](https://github.com/viniciusgribas/Analise_Espacial/blob/main/Master_Code.ipynb)
 
 ---
+# Graphical and Spatial Exploratory Analysis - Brazil Electricity Generation Data from ANEEL [EN 🇬🇧] 
 
-
+---
 
 ## Introduction
 
