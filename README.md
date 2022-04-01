@@ -54,8 +54,18 @@
 >### Considerações Iniciais
 
 
- - Este projeto consiste em uma análise exploratória de dados. O objetivo desta análise é localizar as principais fontes geradoras de energia elétrica no Brasil e visualiza-la de forma espacial.
+ - Este projeto consiste em uma análise exploratória de dados. O objetivo desta análise é visualizar o sistema de geração elétrico brasileiro de forma gráfica e espacial extraindo insights.
+
+ - São realizadas duas análises exploratórias, ambas com objetos do tipo `GeoPandas` *(GeoDataFrame)*. Na primeira análise é utilizado um objeto geográfico do tipo `GeoDataFrame - Points`, com coordenadas cartesianas (Latitude e Longitude). Já a segunda análise é um objeto geográfico do tipo `GeoDataFrame - Polygon`, com a área das regiões geográficas correspondentes.
 
  - O relatório padrão, disponibilizado no site da ANEEL de forma pública é o [Sistema de Informações de Geração da ANEEL (ANEEL SIGA)](https://app.powerbi.com/view?r=eyJrIjoiNjc4OGYyYjQtYWM2ZC00YjllLWJlYmEtYzdkNTQ1MTc1NjM2IiwidCI6IjQwZDZmOWI4LWVjYTctNDZhMi05MmQ0LWVhNGU5YzAxNzBlMSIsImMiOjR9). Os dados deste relatório, estão disponibilizados no [Banco de Dados do Governo Brasileiro](https://dados.gov.br/), onde foram extraídos e estudados. 
 
- - Já os arquivos .shp utilziados, foram extraídos do banco de dados da USP, contendo os [Shapefiles do Brasil por unidades federativas](http://www.usp.br/nereus/?fontes=dados-shape-files)
+ - Já o arquivo .shp utilziados, foram extraídos do banco de dados da USP, contendo os [Shapefiles do Brasil por unidades federativas](http://www.usp.br/nereus/?fontes=dados-shape-files)
+
+ - De forma análoga à supracitada, os arquivos contendo a geometria do Brasil no formato `JSON` foram extraídos de [Brazil Geojson]('https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/brazil-states.geojson')
+
+ - Destaque para as bibliotecas utilizadas para visualização e manipulação de dados, principalmente as bibliotecas GeoPandas, Folium e plotly express.
+
+ - Por fim, as vizualizações iterativas dos dados são exportadas em um arquivo "HTML"
+
+>[PARTE I - Análise Exploratória Gráfica e Espacial Utilizando Python](https://github.com/viniciusgribas/Analise_Espacial)
