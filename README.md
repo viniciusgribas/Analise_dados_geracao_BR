@@ -72,3 +72,8 @@
  - Finally the iterative data visualizations were exported in "HTML" files. Available at [`viniciusgribas.github.io`](https://github.com/viniciusgribas/viniciusgribas.github.io/tree/main/Analises_Espaciais)
 
 >[PART I - Spatial and Graphical Exploratory Analysis Using Python](https://github.com/viniciusgribas/Analise_Espacial/blob/main/Spatial_Analysis_I/GeoDataFrame_Point.ipynb)
+
+
+---
+![image](https://user-images.githubusercontent.com/63691577/161199734-349a05b4-dfd6-40af-898a-7a08a3fd513d.png)
+
