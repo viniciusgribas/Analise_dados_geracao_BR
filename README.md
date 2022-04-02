@@ -6,7 +6,7 @@
 [Energy Engineer (UnB)](https://www.unb.br/) │ [Data Scientist and Analytics (USP)](https://www5.usp.br/)
 
 
-## [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BANALISE-ESPACIAL-ANEEL%5D%20-%20Contact)│ [:dart: Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │[:octocat: GitHub](https://github.com/viniciusgribas) 
+## [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BANALISE-ESPACIAL-ANEEL%5D%20-%20Contact) │ [:dart: Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │ [:octocat: GitHub](https://github.com/viniciusgribas) 
 
 ---
 
@@ -60,6 +60,8 @@
  - Finally the iterative data visualizations were exported in "HTML" files. Available at [`viniciusgribas.github.io`](https://github.com/viniciusgribas/viniciusgribas.github.io/tree/main/GeracaoANEEL_ParteI)
 
 >[PART I - Spatial and Graphical Exploratory Analysis Using Python](https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_I/Master_Code.ipynb) [BR 🇧🇷] 
+
+>[PART II - IN PROGRESS]() [BR 🇧🇷] 
 
 
 ---
