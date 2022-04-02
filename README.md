@@ -53,7 +53,7 @@
 >### Introductory Remarks
 
 
- - This project consists of an exploratory data analysis. The goal of this work is to visualize the Brazilian Electric Generation System in a graphic and spatial perspective extracting insights.
+ - The project consists of an exploratory data analysis. The objective of this analysis is to visualize the Brazilian electric generation system in a diagrammatic and spatial way, extracting insights. 
 
  - Two exploratory analyses are performed both with objects of type `GeoPandas` *(GeoDataFrame)*. In the first analysis a spatial object of type `GeoDataFrame - Points` with Cartesian coordinates (Latitude and Longitude). The second analysis is a spatial object of type `GeoDataFrame - Polygon` with the area of the corresponding geographical regions.
 
