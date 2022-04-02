@@ -33,13 +33,8 @@
     - [geodata-br](https://github.com/tbrugz/geodata-br)
     
     - [PyData-Book](https://github.com/wesm/pydata-book)
-
-    
-
-
+ 
 - Documentation
-
-    - [Folium Examples](https://python-visualization.github.io/folium/quickstart.html)
 
     - [Geopandas](https://geopandas.org/en/stable/)
     
@@ -47,11 +42,12 @@
 
 - Helpful Posts: [medium](https://medium.com) e [towardsdatascience](https://towardsdatascience.com):
 
-    - [How to Create Eye-Catching Maps With Python and Kepler.gl](https://medium.com/nightingale/how-to-create-eye-catching-maps-with-python-and-kepler-gl-e7e897eff8ac)
-
     - [Best Libraries for Geospatial Data Visualisation in Python](https://towardsdatascience.com/best-libraries-for-geospatial-data-visualisation-in-python-d23834173b35)
 
     - [How to create and interactive map of Brazil using Plotly.Express-Geojson in Python](https://python.plainenglish.io/how-to-create-a-interative-map-using-plotly-express-geojson-to-brazil-in-python-fb5527ae38fc)
+    - [Como criar gráficos interativos utilizando Plotly e Python](https://paulovasconcellos.com.br/como-criar-gr%C3%A1ficos-interativos-utilizando-plotly-e-python-3eb6eda57a2b)
+    
+    - [A Workflow for Data Visualization](https://towardsdatascience.com/a-workflow-for-data-visualization-c887d57d7ef1)
 
 
 >### Introductory Remarks
@@ -63,15 +59,9 @@
 
  - The standard report available on ANEEL's website is the [Electricity Generation Information System (ANEEL SIGA)](https://app.powerbi.com/view?r=eyJrIjoiNjc4OGYyYjQtYWM2ZC00YjllLWJlYmEtYzdkNTQ1MTc1NjM2IiwidCI6IjQwZDZmOWI4LWVjYTctNDZhMi05MmQ0LWVhNGU5YzAxNzBlMSIsImMiOjR9). The data for this report is available at [Brazilian Government Database](https://dados.gov.br/), onde foram extraídos e estudados. 
 
- - The file `.shp` was extracted from the USP's database containing the [Shapefiles from Brasil by UF](http://www.usp.br/nereus/?fontes=dados-shape-files)
+ - Finally the iterative data visualizations were exported in "HTML" files. Available at [`viniciusgribas.github.io`](https://github.com/viniciusgribas/viniciusgribas.github.io/tree/main/GeracaoANEEL_ParteI)
 
- - Similarly to the above the files containing the geometry of Brazil in `JSON` were extracted from [Brazil Geojson]('https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/brazil-states.geojson')
-
- - Highlights include the libraries used for data visualization and manipulation especially the GeoPandas, Folium, and plotly express libraries.
- 
- - Finally the iterative data visualizations were exported in "HTML" files. Available at [`viniciusgribas.github.io`](https://github.com/viniciusgribas/viniciusgribas.github.io/tree/main/Analises_Espaciais)
-
->[PART I - Spatial and Graphical Exploratory Analysis Using Python](https://github.com/viniciusgribas/Analise_Espacial/blob/main/Spatial_Analysis_I/GeoDataFrame_Point.ipynb)
+>[PART I - Spatial and Graphical Exploratory Analysis Using Python](https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_I/Master_Code.ipynb) [BR 🇧🇷] 
 
 
 ---
