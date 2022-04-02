@@ -61,6 +61,8 @@
 
 >[PART I - Spatial and Graphical Exploratory Analysis Using Python](https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_I/Master_Code.ipynb) [BR 🇧🇷] 
 
+>>[PART II - In Progress]() [BR 🇧🇷] 
+
 
 ---
 ![image](https://user-images.githubusercontent.com/63691577/161199734-349a05b4-dfd6-40af-898a-7a08a3fd513d.png)
