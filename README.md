@@ -22,8 +22,6 @@
 >### AUXILIARY BIBLIOGRAPHY
 - Files
 
-    - [Shapefile Brasil - UF](http://www.usp.br/nereus/?fontes=dados-shape-files)
-
     - [Electricity Generation Information System (ANEEL SIGA)](https://app.powerbi.com/view?r=eyJrIjoiNjc4OGYyYjQtYWM2ZC00YjllLWJlYmEtYzdkNTQ1MTc1NjM2IiwidCI6IjQwZDZmOWI4LWVjYTctNDZhMi05MmQ0LWVhNGU5YzAxNzBlMSIsImMiOjR9)
 
     - [Brazilian Government Database](https://dados.gov.br/)
