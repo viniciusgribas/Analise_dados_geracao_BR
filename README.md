@@ -10,7 +10,7 @@
 
 ---
 
-# [Project Notebook](C:\Users\vinic\Documents\GitHub\Analise_dados_geracao_BR\Analise_Geracao_I\dados.gov)
+# [Project Notebook](https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_I/Master_Code.ipynb)
 
 ---
 ># Graphical and Spatial Exploratory Analysis - Brazil Electricity Generation Data from ANEEL [EN 🇬🇧] 
