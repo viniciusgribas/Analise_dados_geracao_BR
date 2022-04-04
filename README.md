@@ -63,21 +63,21 @@
 
 >PART I PRODUCTS:
 
-    > [BarChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Bar_GitHub_@viniciusgribas.html)
+- [BarChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Bar_GitHub_@viniciusgribas.html)
      
-    > [BarChart II](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Bar2_GitHub_@viniciusgribas.html)
+- [BarChart II](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Bar2_GitHub_@viniciusgribas.html)
 
-    > [DensityChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Densidade_GitHub_@viniciusgribas.html)
+- [DensityChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Densidade_GitHub_@viniciusgribas.html)
 
-    > [DensityChart II](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Densidade_2_GitHub_@viniciusgribas.html)
+- [DensityChart II](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Densidade_2_GitHub_@viniciusgribas.html)
 
-    > [DensityChart III](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Densidade_3_GitHub_@viniciusgribas.html)
+- [DensityChart III](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Densidade_3_GitHub_@viniciusgribas.html)
 
-    > [StripChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Strip_GitHub_@viniciusgribas.html)
+- [StripChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Strip_GitHub_@viniciusgribas.html)
 
-    > [RadarChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Polar_GitHub_@viniciusgribas.html)
+- [RadarChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Polar_GitHub_@viniciusgribas.html)
 
-    > [CartesianMap I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Points_GitHub_@viniciusgribas.html)
+- [CartesianMap I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Points_GitHub_@viniciusgribas.html)
 
 >[PART I - MEDIUM POST]() [BR 🇧🇷] 
 
