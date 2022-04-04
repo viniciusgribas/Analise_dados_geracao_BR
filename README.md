@@ -77,7 +77,7 @@
 
 - [CartesianMap I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Points_GitHub_@viniciusgribas.html)
 
->[PART I - MEDIUM POST]() [BR 🇧🇷] 
+>[PART I - MEDIUM POST](https://viniciusgribas.medium.com/extraindo-insights-do-sistema-de-gera%C3%A7%C3%A3o-de-energia-el%C3%A9trica-brasileiro-utilizando-python-parte-i-70e3eb58c156) [BR 🇧🇷] 
 
 
 ---
