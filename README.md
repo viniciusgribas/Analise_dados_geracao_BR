@@ -59,9 +59,7 @@
 
  - Finally the iterative data visualizations were exported in "HTML" files. Available at [`viniciusgribas.github.io`](https://github.com/viniciusgribas/viniciusgribas.github.io/tree/main/GeracaoANEEL_ParteI)
 
->[PART I - Spatial and Graphical Exploratory Analysis Using Python](https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_I/Master_Code.ipynb) [BR 🇧🇷] 
-
->PART I PRODUCTS:
+>[PART I PRODUCTS](https://github.com/viniciusgribas/Analise_dados_geracao_BR/tree/main/Analise_Geracao_I):
 
 - [BarChart I](https://viniciusgribas.github.io/GeracaoANEEL_ParteI/Bar_GitHub_@viniciusgribas.html)
      
