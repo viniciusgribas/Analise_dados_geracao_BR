@@ -50,14 +50,14 @@
 
 >### Introductory Remarks
 
+ - The project consists of an exploratory data analysis. The objective of this analysis is to visualize the Brazilian electric generation system in a diagrammatic and spatial way, extracting insights. For this, a dataframe of the GeoDataFrame type was used and, mainly, the power of the Plotly Express library optimized for the Python language. 
+ 
+ - In this Part I, the category of dataframe studied is called Simple Feature: Geometry - MultiPoints, due to its characteristic of presenting a specific variable (geometry), referring to the geometry polar points, representing the Cartesian coordinates of Latitude and Longitude, enabling the georeferencing of the observations.
 
- - The project consists of an exploratory data analysis. The objective of this analysis is to visualize the Brazilian electric generation system in a diagrammatic and spatial way, extracting insights. 
 
- - Two exploratory analyses are performed both with objects of type `GeoPandas` *(GeoDataFrame)*. In the first analysis a spatial object of type `GeoDataFrame - Points` with Cartesian coordinates (Latitude and Longitude). The second analysis is a spatial object of type `GeoDataFrame - Polygon` with the area of the corresponding geographical regions.
+ - The standard report available on ANEEL's website is the [Electricity Generation Information System (ANEEL SIGA)](https://app.powerbi.com/view?r=eyJrIjoiNjc4OGYyYjQtYWM2ZC00YjllLWJlYmEtYzdkNTQ1MTc1NjM2IiwidCI6IjQwZDZmOWI4LWVjYTctNDZhMi05MmQ0LWVhNGU5YzAxNzBlMSIsImMiOjR9). The data for this report is available at [Brazilian Government Database](https://dados.gov.br/). For more information about the GeoDataFrame object types, I recommend visiting the GeoPandas library site.
 
- - The standard report available on ANEEL's website is the [Electricity Generation Information System (ANEEL SIGA)](https://app.powerbi.com/view?r=eyJrIjoiNjc4OGYyYjQtYWM2ZC00YjllLWJlYmEtYzdkNTQ1MTc1NjM2IiwidCI6IjQwZDZmOWI4LWVjYTctNDZhMi05MmQ0LWVhNGU5YzAxNzBlMSIsImMiOjR9). The data for this report is available at [Brazilian Government Database](https://dados.gov.br/), onde foram extraídos e estudados. 
-
- - Finally the iterative data visualizations were exported in "HTML" files. Available at [`viniciusgribas.github.io`](https://github.com/viniciusgribas/viniciusgribas.github.io/tree/main/GeracaoANEEL_ParteI)
+ - Finally the iterative data visualizations were exported in "HTML" files. Available at [`viniciusgribas.github.io`](https://github.com/viniciusgribas/Analise_dados_geracao_BR/tree/main/Analise_Geracao_I)
 
 >[PART I PRODUCTS](https://github.com/viniciusgribas/Analise_dados_geracao_BR/tree/main/Analise_Geracao_I):
 
