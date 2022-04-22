@@ -32,7 +32,7 @@ import streamlit as st
 @st.cache
 def load_data():
     """Function for loading data"""
-    df = pd.read_csv(r"https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_II/Notebooks/output/CSV/Generation_Data.csv",encoding='utf-8',error_bad_lines=False)
+    df = pd.read_csv(r"https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_II/Notebooks/output/CSV/Generation_Data.csv",encoding='utf-8',index=False)
 
     numeric_df = df[['MdaPotenciaFiscalizadaKW','MdaGarantiaFisicaKW','MdaPotenciaOutorgadaKW']]
     numeric_cols = numeric_df.columns
