@@ -60,32 +60,29 @@ df, numeric_cols, text_cols, unique_tipo_ger, unique_uf = load_data()
 
 # Textual Part
 st.write("""
----
-# 🇧🇷⚡
 #  Brazil Generation Sector Dashboard 
 ### A Interative Dashboard App.
----
-## Guide📣
-
- > ⬅️ Explore the "Tools" in the left corner.
- - In the Display's Settings you can view the data and the metadata.
- - The "Author's Insights" tab contains Analyses and Insights extracted by the author.
- - The "Analyses" tab you can try your own insights.
-
-
-
-
-
----
+# 🇧🇷⚡
 ---
  """)
+
+with st.expander("Guide📣"):
+     st.write("""
+     > ⬅️ Explore the "Tools" in the left corner.
+    - In the "General Tools" you can view the data and the metadata.
+    - The "Insight's & Analysis Tools" tab contains interactive charts.
+        - The General Analysis contains fixed variables that make sense with this business type.
+        - The Exploratory Analysis contains three types of charts:
+            - The "DensityHeatmap" 
+    - The "Analyses" tab you can try your own insights.
+
+    """)
 
 #=============================
 # GENERAL SETINGS-------
 ####################
 # Add a Sidebar Title 
 st.sidebar.write("""
-[V: 1.04221]
 # Vinicius Guerra e Ribas 
 #### [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BGENERATION-SECTOR-DASHBOARD%5D%20-%20Contact) │ [🎯 Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │ [😸 GitHub](https://github.com/viniciusgribas) 
 ---
@@ -369,9 +366,9 @@ st.sidebar.write("""
 ---
 """)
 
-# REPOSITORY
+# Info & Repository
 
-st.sidebar.subheader("📚 Notebook Repository")
+st.sidebar.subheader("📚 Info & Repository")
 
 
 
@@ -382,4 +379,5 @@ st.sidebar.write("""
 ##### I invite you to share your insights with me. 
 ##### Hope you enjoy the App! 😁
 ---
+[V: 1.04221]
 """)
