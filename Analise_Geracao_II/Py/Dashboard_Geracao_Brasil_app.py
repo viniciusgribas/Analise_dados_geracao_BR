@@ -38,7 +38,7 @@ import streamlit as st
 def load_data():
     """Function for loading data"""
 
-    patch = r"https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_II/Notebooks/output/CSV/Generation_Data.csv"
+    patch = r"https://raw.githubusercontent.com/viniciusgribas/Analise_dados_geracao_BR/main/Analise_Geracao_II/Notebooks/output/CSV/Generation_Data.csv"
 
     response_API = requests.get(patch)
     
