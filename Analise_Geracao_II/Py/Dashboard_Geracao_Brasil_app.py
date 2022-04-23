@@ -16,6 +16,11 @@ from distutils import text_file
 import pandas as pd
 import numpy as np
 
+##  Web Scrapping library
+
+import requests
+
+
 # Create interative charts and maps
 import plotly.express as px
 import plotly as plt
@@ -32,7 +37,13 @@ import streamlit as st
 @st.cache
 def load_data():
     """Function for loading data"""
-    df = pd.read_csv(r"https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_II/Notebooks/output/CSV/Generation_Data.csv",encoding='utf-8',index=False)
+
+    patch = r"https://github.com/viniciusgribas/Analise_dados_geracao_BR/blob/main/Analise_Geracao_II/Notebooks/output/CSV/Generation_Data.csv"
+
+    response_API = requests.get(patch)
+    
+    df = pd.read_csv(patch ,encoding='utf-8')
+
 
     numeric_df = df[['MdaPotenciaFiscalizadaKW','MdaGarantiaFisicaKW','MdaPotenciaOutorgadaKW']]
     numeric_cols = numeric_df.columns
