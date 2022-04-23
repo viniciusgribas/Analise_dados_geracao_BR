@@ -97,8 +97,8 @@ with st.expander("Guide📣"):
 ####################
 # Add a Sidebar Title 
 st.sidebar.write("""
-# Vinicius Guerra e Ribas 
-#### [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BGENERATION-SECTOR-DASHBOARD%5D%20-%20Contact) │ [🎯 Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │ [😸 GitHub](https://github.com/viniciusgribas) 
+ ### Vinicius Guerra e Ribas
+ ##### [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BGENERATION-SECTOR-DASHBOARD%5D%20-%20Contact) │ [🎯 Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │ [😸 GitHub](https://github.com/viniciusgribas) 
 ---
 """)
 ####################
@@ -393,5 +393,5 @@ st.sidebar.write("""
 ##### I invite you to share your insights with me. 
 ##### Hope you enjoy the App! 😁
 ---
-[V: 1.04221]
+[V: 1.04230]
 """)
