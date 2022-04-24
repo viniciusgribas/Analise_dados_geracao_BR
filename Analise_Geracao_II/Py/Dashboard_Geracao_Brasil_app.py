@@ -384,8 +384,15 @@ st.sidebar.write("""
 
 st.sidebar.subheader("📚 Info & Repository")
 
+with st.sidebar.expander("Repository 😸"):
+    st.write("""
+[1) ETL PROCESS](https://viniciusgribas.github.io/Dashboard_Report_Brasil_GenData/ELT_Notebook.html)
 
+[2) EXPLORATORY ANALISYS]()
 
+[3) DASHBOARD PYTHON FILE]()
+
+""")
 
 
 st.sidebar.write("""
