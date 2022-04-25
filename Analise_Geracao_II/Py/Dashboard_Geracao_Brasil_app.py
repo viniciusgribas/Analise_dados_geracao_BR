@@ -724,7 +724,7 @@ with st.sidebar.expander("Repository 😸"):
 
 [🔶 EXPLORATORY ANALISYS 🧪](https://viniciusgribas.github.io/Dashboard_Report_Brasil_GenData/Exploratory_Analysis.html)
 
-[🔶 DASHBOARD PYTHON FILE 📱]()
+[🔶 DASHBOARD PYTHON FILE 📱](https://raw.githubusercontent.com/viniciusgribas/Analise_dados_geracao_BR/main/Analise_Geracao_II/Py/Dashboard_Geracao_Brasil_app.py)
 
 """)
 
