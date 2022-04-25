@@ -157,15 +157,15 @@ st.sidebar.write("""
 st.sidebar.write("""
     > ## 🧰 General Tools
     """)
-# add Display Dataset to sidebar
-check_box = st.sidebar.checkbox(label="Display Dataset 🗃️")
+# add  Dataset to sidebar
+check_box = st.sidebar.checkbox(label=" Dataset 🗃️")
 if check_box:
     # lets show the dataset
     st.write("""# 🗃️ DATASET """)
     st.write(df)
 
-# add Display Metadata to sidebar
-check_box = st.sidebar.checkbox(label="Display Metadata 🔎")
+# add  Metadata to sidebar
+check_box = st.sidebar.checkbox(label=" Metadata 🔎")
 if check_box:
     # lets show the dataset
     st.write("""# 🔎 VARIABLE METADATA """)
@@ -692,7 +692,7 @@ if check_box:
         hover_name='Empreendimento',
         symbol=symbol_values,
         color=color_value)
-        # display the chart
+        # show the chart
         st.plotly_chart(plot)
 
 
