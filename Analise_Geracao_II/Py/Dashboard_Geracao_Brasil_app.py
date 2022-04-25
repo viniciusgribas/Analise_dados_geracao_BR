@@ -39,7 +39,7 @@ import numpy as np
 import requests
 
 
-# Create interative charts and maps
+# Create interactive charts and maps
 import plotly.express as px
 import plotly as plt
 import plotly.figure_factory as ff
@@ -112,7 +112,7 @@ st.write("""
 ---
 # 🇧🇷⚡
 #  Brazil Generation Sector Dashboard 
-### A Interative Dashboard Report.
+### A Interactive Dashboard Report.
 
 ---
  """)
