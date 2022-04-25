@@ -120,7 +120,7 @@ st.write("""
 ## Guide Expander
 with st.expander("❗ GUIDE ❗"):
      st.write("""
-     > ⬅️ Explore the **⚙️ Tools** in the left corner.
+     > ↖️ Explore the **⚙️ Tools** in the top left corner.
     - 📣 In **🧰 General Tools** you can view the dataset, the metadata information and the basics relationships between categorical variables.
     
     - 📣 The **💡 Insight's & Analysis Tools** tab contains interactive charts divided into two sections:
