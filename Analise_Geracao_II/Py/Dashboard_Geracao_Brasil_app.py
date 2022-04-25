@@ -1,10 +1,26 @@
 
-#---
-
-# Vinicius Guerra e Ribas
-## [Energy Engineer (UnB)] │ [Data Scientist & Analytics (USP)]
-
-#---
+#############################################################################################
+# ──────────────────────────────────────────────────────────────────────────────────────────#
+# ─██████──██████─██████████████─████████████████───────────────────────────────────────────#
+# ─██░░██──██░░██─██░░░░░░░░░░██─██░░░░░░░░░░░░██───────────────────────────────────────────#
+# ─██░░██──██░░██─██░░██████████─██░░████████░░██───────────────────────────────────────────#
+# ─██░░██──██░░██─██░░██─────────██░░██────██░░██───────────────────────────────────────────#
+# ─██░░██──██░░██─██░░██─────────██░░████████░░██───────────────────────────────────────────#
+# ─██░░██──██░░██─██░░██──██████─██░░░░░░░░░░░░██───────────────────────────────────────────#
+# ─██░░██──██░░██─██░░██──██░░██─██░░██████░░████───────────────────────────────────────────#
+# ─██░░░░██░░░░██─██░░██──██░░██─██░░██──██░░██─────────────────────────────────────────────#
+# ─████░░░░░░████─██░░██████░░██─██░░██──██░░██████─────────────────────────────────────────#
+# ───████░░████───██░░░░░░░░░░██─██░░██──██░░░░░░██─────────────────────────────────────────#
+# ─────██████─────██████████████─██████──██████████─────────────────────────────────────────#
+# ──────────────────────────────────────────────────────────────────────────────────────────#
+# Dashboard_Geracao_Brasil-[23/04/2022]                                                     #
+# ──────────────────────────────────────────────────────────────────────────────────────────#
+#############################################################################################
+# Vinicius Guerra e Ribas                                                                   #
+## [Energy Engineer (UnB)] │ [Data Scientist & Analytics (USP)]                             #
+#                                                                                           #
+# github.com/viniciusgribas                                                                 #
+#############################################################################################
 
 
 # Library imports
@@ -14,6 +30,7 @@
 
 from distutils import text_file
 import pandas as pd
+
 import numpy as np
 
 ##  Web Scrapping library
@@ -36,7 +53,7 @@ import streamlit as st
 
 @st.cache
 def load_data():
-    """Function for loading data"""
+    # Function do Load Data
 
     patch = r"https://raw.githubusercontent.com/viniciusgribas/Analise_dados_geracao_BR/main/Analise_Geracao_II/Notebooks/output/CSV/Generation_Data.csv"
 
@@ -55,7 +72,7 @@ def load_data():
                      'FonteCombustivel',
                      'Outorga',
                      'NomeCombustivel',
-                     'GeracaoQualificada'] ]
+                     'GeracaoQualificada',] ]
     text_cols = text_df.columns
 
     uf_column = df['UF']
@@ -66,55 +83,76 @@ def load_data():
 
     unique_tipo_ger = tipo_ger_column.unique()
 
+    df.DatEntradaOperacao = pd.to_datetime(df.DatEntradaOperacao)
+    df.DatInicioVigencia  = pd.to_datetime(df.DatInicioVigencia)
+    df.DatFimVigencia = pd.to_datetime(df.DatFimVigencia)
+    df.ETL_CreatedDataLoad_At = pd.to_datetime(df.ETL_CreatedDataLoad_At)
+    df.ETL_DataBase_LastModified = pd.to_datetime(df.ETL_DataBase_LastModified)
+    print('CREATION DATE [',df.ETL_CreatedDataLoad_At[1], ']') # Time this file was generated by the ETL
+    print('LAST SERVER UPDATE ON DATA [',df.ETL_DataBase_LastModified[1],']') # Time the host last updated the file
+
     return (df, numeric_cols, text_cols, unique_tipo_ger,unique_uf)
 
 
 df, numeric_cols, text_cols, unique_tipo_ger, unique_uf = load_data()
 
+#################
+#  START HEAD   #
+#################
 
-# Textual Part
+# Simple Text
 st.write("""
-#  Brazil Generation Sector Dashboard 
-### A Interative Dashboard App.
+---
+####  Vinicius Guerra e Ribas
+###### [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BGENERATION-SECTOR-DASHBOARD-REPORT%5D%20-%20Contact) │ [🎯 Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │ [😸 GitHub](https://github.com/viniciusgribas) 
+---
 # 🇧🇷⚡
+#  Brazil Generation Sector Dashboard 
+### A Interative Dashboard Report.
+
 ---
  """)
 
-with st.expander("Guide📣"):
+## Guide Expander
+with st.expander("❗ GUIDE ❗"):
      st.write("""
-     > ⬅️ Explore the "Tools" in the left corner.
-    - In the "General Tools" you can view the data and the metadata.
-    - The "Insight's & Analysis Tools" tab contains interactive charts.
-        - The General Analysis contains fixed variables that make sense with this business type.
-        - The Exploratory Analysis contains three types of charts:
-            - The "DensityHeatmap" 
-    - The "Analyses" tab you can try your own insights.
+     > ⬅️ Explore the **⚙️ Tools** in the left corner.
+    - 📣 In **🧰 General Tools** you can view the dataset, the metadata information and the basics relationships between categorical variables.
+    
+    - 📣 The **💡 Insight's & Analysis Tools** tab contains interactive charts divided into two sections:
+        - The "General Analysis" contains analyses that make sense for this business type.
+        - The "Try Analysis" tab allows the user to input variables.
+
+    - 📣 The **📚 Info & Repository** tab contains information about this dashboard report and its repository.
+
+    - 📍 Always remember to put the charts in full screen, this will make your analysis easier.
+
+    - 📍 You can leave only one, all or zero checkboxes in the sidebar at left.
+
+
 
     """)
 
-#=============================
-# GENERAL SETINGS-------
-####################
-# Add a Sidebar Title 
+#################
+#  END   HEAD   #
+#################
+
+########################
+# START SIDEBAR HEAD   #
+########################
+
+# Sidebar simple Text
 st.sidebar.write("""
- ### Vinicius Guerra e Ribas
- ##### [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BGENERATION-SECTOR-DASHBOARD%5D%20-%20Contact) │ [🎯 Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │ [😸 GitHub](https://github.com/viniciusgribas) 
----
+    > # ⚙️ TOOLS ⬇️ 
 """)
-####################
-
-
-
-
-
-
-
-st.sidebar.title("⚙️ TOOLS ⬇️ ")
 st.sidebar.write("""
 ---
 """)
 
-st.sidebar.subheader("🧰 General Tools")
+# GENERAL TOOLS
+st.sidebar.write("""
+    > ## 🧰 General Tools
+    """)
 # add Display Dataset to sidebar
 check_box = st.sidebar.checkbox(label="Display Dataset 🗃️")
 if check_box:
@@ -126,189 +164,455 @@ if check_box:
 check_box = st.sidebar.checkbox(label="Display Metadata 🔎")
 if check_box:
     # lets show the dataset
-    st.write("""# 🔎 METADATA """)
+    st.write("""# 🔎 VARIABLE METADATA """)
     st.write( """
-| Variable                 | Type        | Meaning                      |
-|--------------------------|-------------|------------------------------|
-| `MdaGarantiaFisicaKW`      | Numerical   | Physical Guarantee of Energy |
-| `MdaPotenciaFiscalizadaKW` | Numerical   | Supervised Electric Power    |
-| `MdaPotenciaOutorgadaKW`   | Numerical   | Granted Electric Power       |
-| `Empreendimento`           | Categorical | Business Name                |
-| `UF`                       | Categorical | Brasil States                |
-| `TipoGeracao`              | Categorical | Generation Type              |
-| `Fase`                     | Categorical | Operational Phase            |
-| `OrigemCombustivel`        | Categorical | Fuel Origin                  |
-| `FonteCombustivel`         | Categorical | Fuel Source                  |
-| `NomeCombustivel`          | Categorical | Fuel Name                    |
-| `Outorga`                  | Categorical | Grant                        |
-| `GeracaoQualificada`       | Categorical | Qualified Generation Mode    |
-| `DatEntradaOperacao`       | Date-Time   | Operation Start Date         |
-| `DatInicioVigencia`        | Date-Time   | Start Date of Contract       |
-| `DatFimVigencia`           |   Date-Time | End Date of Contract         |
-| `X`                        |  Geographic | Longitude Values             |
-| `Y`                        |  Geographic | Latitude Values              |
+
+ | Variable                 | Type        | Meaning                      |
+ |--------------------------|-------------|------------------------------|
+ | MdaGarantiaFisicaKW      | Numerical   | Physical Guarantee of Energy |
+ | MdaPotenciaFiscalizadaKW | Numerical   | Supervised Electric Power    |
+ | MdaPotenciaOutorgadaKW   | Numerical   | Granted Electric Power       |
+ | Empreendimento           | Categorical | Business Name                |
+ | UF                       | Categorical | Brasil States                |
+ | TipoGeracao              | Categorical | Generation Type              |
+ | Fase                     | Categorical | Operational Phase            |
+ | OrigemCombustivel        | Categorical | Fuel Origin                  |
+ | FonteCombustivel         | Categorical | Fuel Source                  |
+ | NomeCombustivel          | Categorical | Fuel Name                    |
+ | Outorga                  | Categorical | Grant                        |
+ | GeracaoQualificada       | Categorical | Qualified Generation Mode    |
+ | DatEntradaOperacao       | Date-Time   | Operation Start Date         |
+ | DatInicioVigencia        | Date-Time   | Contract Start Date       |
+ | DatFimVigencia           | Date-Time   | Contract End Date         |
+ | X                        | Geographic  | Longitude Values             |
+ | Y                        | Geographic  | Latitude Values              |
+ |  ETL_CreatedDataLoad_At    |  Date-Time   | DataFrame creation date      |
+ |  ETL_DataBase_LastModified |  Date-Time   | DataFrame Last Updated       |
 
 """)
 
+check_box = st.sidebar.checkbox(label="Categorical Variables Relations 🧭")
+if check_box:
+    # lets show the dataset
+    st.write("""# 🧭 INTERACTIVE HIERARCHY""")
+    st.write("""
+        Interactive alluvial diagram with hierarchical variables
 
-#=============================
+        > 💡 Interact with the Chart by dragging the headlines
+        
+        """)
+    fig = px.parallel_categories(df,
+        dimensions  = ['GeracaoQualificada','Fase','Outorga','OrigemCombustivel','TipoGeracao','FonteCombustivel','NomeCombustivel'],
+        labels ={'GeracaoQualificada','Fase','Outorga','OrigemCombustivel','TipoGeracao','FonteCombustivel','NomeCombustivel'}
+        )
+    st.plotly_chart(fig)
+
 st.sidebar.write("""
 ---
 """)
-# AUTHOR INSIGHTS-------
 
-st.sidebar.subheader("💡 Insight's & Analysis Tools")
+# INSIGHTS E ANALYSIS TOOLS
+st.sidebar.write("""
+> ## 💡 Insight's & Analysis Tools
+""")
 
-# General Analyses
-check_box = st.sidebar.checkbox(label="General Analyses 📊")
-# General Analyses Checkbox
+##########################
+#  START GENERAL ANALYSES  #
+##########################
+st.sidebar.write("""
+ -  ### General Analyses 📊
+ """)
+#----------------------
+## GEOGRAPHICAL ANALYSES
+#----------------------
+
+check_box = st.sidebar.checkbox(label="Geographical 🗺️")
 if check_box:
-    # lets show the dataset
-    st.write("""# 📊 General Analyses""")
+    # Cartesian Coordinate Map
+    st.write("""
+    ##  Interactive Cartesian Coordinate Map 🗺️
+
+    > 💡 interact with the map by moving your cursor and zooming in, or filter the generation types in the legends.
+
+
+
+    """)
+    df_map = df.get(df['X']!=0.0)
+    fig_pointsMap = px.scatter_mapbox(df_map,                                         
+        lat="Y",                                              
+        lon="X",                                              
+        color="TipoGeracao",                       
+        size="MdaPotenciaOutorgadaKW",                        
+        color_continuous_scale=px.colors.sequential.matter,   
+        hover_name = "Empreendimento",                
+        hover_data = ["MdaPotenciaOutorgadaKW"],
+        title= 'Iterative Cartesian Coordinate Map',              
+        size_max=80,                                          
+        zoom=3,                                               
+        mapbox_style='open-street-map',                      
+        animation_frame='Fase'                        
+        )
+
+    st.plotly_chart(fig_pointsMap)
+#----------------------
+## TIMELINE ANALYSES
+#----------------------
+check_box = st.sidebar.checkbox(label="Timeline 📆")
+if check_box:
+    #FIXED MESSAGE
+    st.write("""
+    ##  Interactive Timeline Chart's 📆
+
+    > 💡 interact with the map by moving your cursor and zooming in, or filter the generation types in the legends.
+
+    > 📍 In the sidebar on the left, select one of DataTime variables:
+     | Variable                 | Type        | Meaning                      |
+     |--------------------------|-------------|------------------------------|
+     | DatEntradaOperacao       | Date-Time   | Operation Start Date         |
+     | DatInicioVigencia        | Date-Time   | Contract Start Date       |
+     | DatFimVigencia           | Date-Time   | Contract End Date         |
+
+     > 📍 Remember to put on full screen for better viewing.
+
+
+    """)
+    df_data = df.get(df['DatInicioVigencia']>'1901')    
+    df_data = df.get(df['DatFimVigencia']>'1901')
+    df_data_op = df.get(df['DatEntradaOperacao']>'1901')
+
     chart_select = st.sidebar.radio(
-    label="Select the chart type",
-    options=['Map', 'Pie', 'Tree', 'Strip' , 'Polar'])
+    label="Select one of DataTime variables:",
+    options=['DatEntradaOperacao','DatInicioVigencia','DatFimVigencia'])
 
-     #### Cicle Charts to Hierarchical Variables ####
-    if chart_select == 'Pie':
-        #### Cicle Charts to Hierarchical Variables ####
+# DatEntradaOperacao
+    if chart_select == 'DatEntradaOperacao':
         st.write("""
-        Interactive pie chart with hierarchical variables
-
-        > 💡 Interact with the Chart by clicking on the sectors in the circle
-        
+        ---
+        # DatEntradaOperacao
+        ## Operation Start Date 
+        ---
         """)
-        # Titles
-        title_SunBurstChart = "Granted Potency by State and Type of Generation in Brazil"
-        # Size
-        size = 750
-
-        fig_SunBurstChart = px.sunburst(df, 
-            path=[px.Constant('BRASIL'),
-                "UF",
-                'TipoGeracao'],
-            values='MdaPotenciaOutorgadaKW',
-            title= title_SunBurstChart,
-            width=size,
-            height=size,
-            maxdepth = -1  
+        fig_box = px.box(df_data_op,
+        title='DatEntradaOperacao',
+        x='TipoGeracao',
+        y="DatEntradaOperacao",
+        hover_name='Empreendimento',
+        color='TipoGeracao',
+        points="all",
+        width= 1000,
+        height= 600,
+        animation_frame='Fase'
+        
         )
 
-        st.plotly_chart(fig_SunBurstChart)
-     #### Cicle Charts to Hierarchical Variables ####
-    if chart_select == 'Tree':
-        #### Cicle Charts to Hierarchical Variables ####
+        st.plotly_chart(fig_box)
+
         st.write("""
-        Interactive TreeMap chart with hierarchical variables
-
-        > 💡 Interact with the Chart by clicking on the sectors in the rectangle
-        
-        """)
-        # Titles
-        title_treemapChart = "Granted Power [KW] by Phase and Type of Generation in Brazil"
-        # Size
-        size = 750
-        fig_treemapChart = px.treemap(df, 
-            path=[px.Constant('BRASIL'),
-                "Fase",
-                'OrigemCombustivel',
-                'FonteCombustivel',
-                'UF'
-                ],
-            values='MdaPotenciaOutorgadaKW',
-            title= title_treemapChart,
-            width=size,
-            height=size,
-            maxdepth = -1  )
-
-        st.plotly_chart(fig_treemapChart)
-
-    if chart_select == 'Strip':
-            #### Cicle Charts to Hierarchical Variables ####
-            st.write("""
-                Interactive Strip Chart with categorical and numerical variables.
-                > 💡 Interact with the Chart by clicking on the legend color icons or try selecting an area.
-            
-            """)
-            # Title
-
-            title_strip = "Granted Power [KW] and Type of Generation by State"
-
-            # Função para criar a variável do gráfico de pontos iterativo do plotfy
-
-            fig_Strip = px.strip(df,  # Dataframe
-            title=title_strip,           # Title
-            x="MdaPotenciaOutorgadaKW",  # Numerical Variable
-            y="UF",                      # Categorical Variable
-            orientation="h",             # Horizontal orientation
-            hover_name="Empreendimento", # Business name
-            color="TipoGeracao",      # Categorical Variable
-            )
-
-            st.plotly_chart(fig_Strip)
-
-    if chart_select == 'Polar':
-        #### Cicle Charts to Hierarchical Variables ####
-        st.write("""
-            Interactive Polar Chart with categorical and numerical variables.
-            > 💡 Interact with the Chart by sliding below the picture or try selecting an area.
-        
-        """)
-        # Title
-
-        title_Polar = "Granted Power [KW] and Type of Generation by State"
-
-        # Função para criar a variável do gráfico de pontos iterativo do plotfy
-
-        fig_Polar = px.bar_polar(df, # Dataframe
-        title=title_Polar,              # Title
-        r="MdaPotenciaOutorgadaKW",     # Numerical Variable
-        theta="UF",                     # Categorical Variable
-        color="MdaPotenciaOutorgadaKW", # Numerical Variable
-        template="seaborn",              # Color Theme 
-        animation_frame="TipoGeracao",  # Categorical Variable
-        hover_name= 'Empreendimento',
-        color_discrete_sequence= px.colors.sequential.Plasma_r # Color Theme 
-        ) 
-
-        st.plotly_chart(fig_Polar)
-
-    if chart_select == 'Map':
-        #### Cicle Charts to Hierarchical Variables ####
-        st.write("""
-            Interactive Map of Coordinates.
-            > 💡 Interact with the map by sliding below the picture or try selecting an area.
-        
-        """)
-        # Titulo
-
-        title_pointsMap = "Power Granted by Business Location"
-
-        # Função para criar a variável do gráfico de pontos iterativo do plotfy
-
-        fig_pointsMap = px.scatter_mapbox(df,              # DataFrame
-        title=title_pointsMap,                                # Titulo
-        lat="Y",                                              # Variável do tipo Float Referente à Latitude
-        lon="X",                                              # Variável do tipo Float Referente à Longitude
-        color="MdaPotenciaOutorgadaKW",                       # Variável Quantitativa Contínua atribuída à cor
-        size="MdaPotenciaOutorgadaKW",                        # Variável Quantitativa Contínua atribuída ao tamanho dos círculos
-        color_continuous_scale=px.colors.sequential.matter,   # Opção de Cores pré-definidas pelo plotfy
-        hover_name = "Empreendimento" ,                       # Apresentar o nome do empreendimento na caixa iterativa
-        hover_data = ["MdaPotenciaOutorgadaKW"],              # Variável Quantitativa Contínua atribuída à função
-        size_max=80,                                          # Tamanho máximo para os círculos
-        zoom=3,                                               # Zoom inicial no mapa
-        mapbox_style='open-street-map',                       # Opção de Mapa pré definida pelo plotfy
-        animation_frame='TipoGeracao'                         # Variável Qualitativa Atribuída à animação do mapa (Vai dividi-lo)
+        ---
+        """)        
+        fig_histogram = px.histogram(df_data_op,
+            title='DatEntradaOperacao',
+            x="DatEntradaOperacao",
+            marginal='violin',
+            color = 'Fase',
+            barmode='group',
+            animation_frame='TipoGeracao',
+            labels='TipoGeracao',
+            range_y = (0,200),
+            width= 1000,
+            height= 600 
         )
-        st.plotly_chart(fig_pointsMap)
 
-check_box = st.sidebar.checkbox(label="Exploratory Analyses 🔭")
+        st.plotly_chart(fig_histogram)
+        
+        st.write("""
+       ---
+        """)
+        fig_dens = px.density_heatmap(df_data_op, 
+        title='Timeline - GrantedPower - DatEntradaOperacao',                
+        x="DatEntradaOperacao",                               
+        y="TipoGeracao",                     
+        z= "MdaPotenciaOutorgadaKW" ,         
+        marginal_x="histogram",              
+        marginal_y="histogram",               
+        text_auto=True,
+        width= 1500,
+        height= 800,
+        animation_frame='Fase'               
+        )
+        st.plotly_chart(fig_dens)
+
+# DatInicioVigencia
+    if chart_select == 'DatInicioVigencia':
+        st.write("""
+        ---
+        # DatInicioVigencia
+        ## Contract Start Date 
+        ---
+        """)
+        fig_box = px.box(df_data,
+        title='DatInicioVigencia',
+        x='TipoGeracao',
+        y="DatInicioVigencia",
+        hover_name='Empreendimento',
+        color='TipoGeracao',
+        points="all",
+        width= 1000,
+        height= 600,
+        animation_frame='Fase'
+        
+        )
+
+        st.plotly_chart(fig_box)
+
+        st.write("""
+        ---
+        """)        
+        fig_histogram = px.histogram(df_data,
+            title='DatInicioVigencia',
+            x="DatInicioVigencia",
+            marginal='violin',
+            color = 'Fase',
+            barmode='group',
+            animation_frame='TipoGeracao',
+            labels='TipoGeracao',
+            range_y = (0,200),
+            width= 1000,
+            height= 600 
+        )
+
+        st.plotly_chart(fig_histogram)
+        
+        st.write("""
+       ---
+        """)
+        fig_dens = px.density_heatmap(df_data, 
+        title='Timeline - GrantedPower - DatInicioVigencia',                
+        x="DatInicioVigencia",                               
+        y="TipoGeracao",                     
+        z= "MdaPotenciaOutorgadaKW" ,         
+        marginal_x="histogram",              
+        marginal_y="histogram",               
+        text_auto=True,
+        width= 1500,
+        height= 800,
+        animation_frame='Fase'               
+        )
+        st.plotly_chart(fig_dens)
+
+# DatFimVigencia
+    if chart_select == 'DatFimVigencia':
+        st.write("""
+        ---
+        # DatFimVigencia
+        ## Contract End Date  
+        ---
+        """)
+        fig_box = px.box(df_data,
+        title='DatFimVigencia',
+        x='TipoGeracao',
+        y="DatFimVigencia",
+        hover_name='Empreendimento',
+        color='TipoGeracao',
+        points="all",
+        width= 1000,
+        height= 600,
+        animation_frame='Fase'
+        
+        )
+
+        st.plotly_chart(fig_box)
+
+        st.write("""
+        ---
+        """)        
+        fig_histogram = px.histogram(df_data,
+            title='DatFimVigencia',
+            x="DatFimVigencia",
+            marginal='violin',
+            color = 'Fase',
+            barmode='group',
+            animation_frame='TipoGeracao',
+            labels='TipoGeracao',
+            range_y = (0,200),
+            width= 1000,
+            height= 600 
+        )
+
+        st.plotly_chart(fig_histogram)
+        
+        st.write("""
+       ---
+        """)
+        fig_dens = px.density_heatmap(df_data, 
+        title='Timeline - GrantedPower - DatFimVigencia',                
+        x="DatFimVigencia",                               
+        y="TipoGeracao",                     
+        z= "MdaPotenciaOutorgadaKW" ,         
+        marginal_x="histogram",              
+        marginal_y="histogram",               
+        text_auto=True,
+        width= 1500,
+        height= 800,
+        animation_frame='Fase'               
+        )
+        st.plotly_chart(fig_dens)
+
+#----------------------
+## CLUSTER ANALYSES
+#----------------------
+check_box = st.sidebar.checkbox(label="Cluster 🔗")
+if check_box:
+    #FIXED MESSAGE
+    st.write("""
+    ##  Interactive Cluster Chart's 🔗
+
+    > 💡 interact with the graph by clicking on the desired section.
+
+    > 📍 Remember to put on full screen for better viewing.
+
+
+    """)
+
+# Sunburst Chart
+    st.write("""
+    ---
+    """)
+
+    fig_SunBurstChart = px.sunburst(df, 
+    path=[px.Constant('BRASIL'),
+    'Fase',
+    "UF",
+    'TipoGeracao'],
+    values='MdaPotenciaOutorgadaKW',
+    title= 'Sunburst Chart: Granted Power by Phase, Type of Generation and States in Brazil',
+    width=750,
+    height=750,
+    maxdepth = -1  )
+    st.plotly_chart(fig_SunBurstChart)
+# Treemap Chart
+    st.write("""
+    ---
+    """)
+    fig_treemapChart = px.treemap(df, 
+    path=[px.Constant('BRASIL'),
+    "Fase",
+    'OrigemCombustivel',
+    'FonteCombustivel',
+    'UF'
+    ],
+    values='MdaPotenciaOutorgadaKW',
+    title= 'TreeMap Chart: Granted Power by Phase, Type of Generation and States in Brazil',
+    width=750*2,
+    height=750,
+    maxdepth = -1  )
+    st.plotly_chart(fig_treemapChart)      
+
+#----------------------
+##  Cross-Variables ANALYSES
+#----------------------
+check_box = st.sidebar.checkbox(label="Cross-Variables 🧮")
+if check_box:
+    #FIXED MESSAGE
+    st.write("""
+    ##  Interactive Cross-Variables Chart's 🧮 - Categorical and Numerical
+
+    > 💡 interact with the graph by clicking on the desired section.
+
+    > 📍 Remember to put on full screen for better viewing.
+
+
+    """)
+
+# bar Chart
+    st.write("""
+    ---
+   ##### 🔷 Two Categorical Variables and One Numerical Variables
+    
+    ---
+
+    """)
+    fig_BarChart = px.bar(df, 
+    x="UF",                      
+    y="MdaPotenciaOutorgadaKW",  
+    color="TipoGeracao",         
+    hover_name='Fase',
+    title='Bar Chart - Power Granted by States, Generation Type and Phase',        
+    width=800,                   
+    height=1000,                 
+    animation_frame='Fase'
+    )
+    st.plotly_chart(fig_BarChart)
+
+# strip chart
+    st.write("""
+    ---
+    ##### 🔷 Three Categorical Variables and One Numerical Variables
+    ---
+
+    """)
+
+    fig_Strip = px.strip(df,  
+    x="MdaPotenciaOutorgadaKW",  
+    y="UF",                      
+    orientation="h",            
+    hover_name="Empreendimento",
+    title = 'Strip Chart - Power Granted by States, Generation Type, Phase and Business',
+    color="TipoGeracao",      
+    animation_frame='Fase'
+    )
+    st.plotly_chart(fig_Strip)
+
+# 3d chart
+    dfGuarantee=df.get(df.MdaGarantiaFisicaKW > 0)
+
+    st.write("""
+    ---
+    ##### 🔷 Three Categorical Variables and Two Numerical Variables
+    ---
+
+    """)
+    fig_Strip3d = px.scatter_3d(dfGuarantee,
+    x='MdaPotenciaOutorgadaKW',
+    y='MdaGarantiaFisicaKW',
+    z='UF',
+    color='TipoGeracao',
+    title= '3D Chart - Granted Power and Physical Guarantee by States, Generation Type, Phase and Business',
+    hover_name='Empreendimento',
+    symbol='TipoGeracao', 
+    animation_frame='Fase')
+    
+    st.plotly_chart(fig_Strip3d)
+     
+
+
+##########################
+#  END GENERAL ANALYSES  #
+##########################
+
+##########################
+#  START TRY ANALYSES  #
+##########################
+
+st.sidebar.write("""
+ - ### Try Analyses 🧪
+ """)
+
+check_box = st.sidebar.checkbox(label="Multi-Variables 🔬")
 if check_box:
     # lets show the dataset
-    st.write("""# 🔭 Exploratory Analyses""")
+    st.write("""
+    #  Try Analyses 🧪
+    
+    > 💡 interact with the graph by clicking on the desired section.
+
+    > 📍 Remember to put on full screen for better viewing.
+    
+    """)
+
     chart_options = st.sidebar.radio(
     label="Select the type of chart for your analysis",
-    options=['DensityHeatmap','Bar','Scatterplots'])
+    options=['DensityHeatmap','Bar','3D Scatterplots'])
 
     if chart_options == 'DensityHeatmap':
         st.write("""
@@ -321,17 +625,20 @@ if check_box:
 
         x = st.sidebar.selectbox("X axis", options=text_cols)
         y = st.sidebar.selectbox("Y axis", options=text_cols)
+        z = st.sidebar.selectbox("Z axis", options=numeric_cols)
 
         title_Densidade = "Density and Bar Diagrams with categorical variables"
 
-        fig_dens = px.density_heatmap(df,  # Dataframe
-        title=title_Densidade,                # Titulo
-        x=x,                               # Variável Qualitativa Nominal
-        y=y,                      # Variável Qualitativa Nominal
-        #z= "MdaPotenciaOutorgadaKW" ,           # Variável Quantitativa Contínua
-        marginal_x="histogram",               # Tipo de diagrama adicional para o eixo X
-        marginal_y="histogram",               # Tipo de diagrama adicional para o eixo Y
-        text_auto=True                        # Contagem para cada uma das células
+        fig_dens = px.density_heatmap(df,  
+        title=title_Densidade,              
+        x=x,                              
+        y=y,                      
+        z= z,           
+        marginal_x="histogram",               
+        marginal_y="histogram",              
+        text_auto=True,                      
+        width= 1500,
+        height= 800,
         )
         st.plotly_chart(fig_dens)
 
@@ -358,7 +665,7 @@ if check_box:
         )
         st.plotly_chart(fig_BarChart)
 
-    if chart_options == 'Scatterplots':
+    if chart_options == '3D Scatterplots':
 
         st.write("""
             Scatterplots chart with two numeric variable and one categorical.  
@@ -370,8 +677,17 @@ if check_box:
 
         x_values = st.sidebar.selectbox('X axis', options=numeric_cols)
         y_values = st.sidebar.selectbox('Y axis', options=numeric_cols)
+        z_values = st.sidebar.selectbox('Z axis', options=text_cols)
+        symbol_values =st.sidebar.selectbox("symbol", options=text_cols)
         color_value = st.sidebar.selectbox("Color", options=text_cols)
-        plot = px.scatter(data_frame=df, x=x_values, y=y_values, color=color_value)
+
+        plot = px.scatter_3d(data_frame=df,
+        x=x_values,
+        y=y_values,
+        z=z_values,
+        hover_name='Empreendimento',
+        symbol=symbol_values,
+        color=color_value)
         # display the chart
         st.plotly_chart(plot)
 
@@ -379,26 +695,52 @@ if check_box:
 st.sidebar.write("""
 ---
 """)
+##########################
+#  END TRY ANALYSES  #
+##########################
+
 
 # Info & Repository
 
 st.sidebar.subheader("📚 Info & Repository")
+with st.sidebar.expander("Info 🦉"):
+    st.write("""
+     This Dashboard Report is  Data Engineering solution 
+    developed to provide Brazilian Electric Generation data in a dashboard type report, 
+    prioritizing to be iterative, dynamic and autonomous. 
+    Accessible by specialists in a timely manner.
+
+    A Report made with ❤️ by [viniciusgribas](https://github.com/viniciusgribas)
+""")
+
+
 
 with st.sidebar.expander("Repository 😸"):
     st.write("""
-[1) ETL PROCESS](https://viniciusgribas.github.io/Dashboard_Report_Brasil_GenData/ELT_Notebook.html)
 
-[2) EXPLORATORY ANALISYS]()
+    The workflow adopted is presented in the following repositories:
 
-[3) DASHBOARD PYTHON FILE]()
+[🔶 ETL PROCESS ⚙️](https://viniciusgribas.github.io/Dashboard_Report_Brasil_GenData/ELT_Notebook.html)
+
+[🔶 EXPLORATORY ANALISYS 🧪](https://viniciusgribas.github.io/Dashboard_Report_Brasil_GenData/Exploratory_Analysis.html)
+
+[🔶 DASHBOARD PYTHON FILE 📱]()
 
 """)
 
 
 st.sidebar.write("""
 ---
-##### I invite you to share your insights with me. 
-##### Hope you enjoy the App! 😁
+##### *I invite you to share your insights with me.* 
+##### *Hope you enjoy the App!* 😁
+
+#### [*Please feel free to contact me.*](mailto:viniciusgribas@gmail.com?Subject=%5B-GENERATION-SECTOR-DASHBOARD%5D%20-%20Insights)
 ---
-[V: 1.04230]
+#### Brazil Generation Sector Dashboard
+##### A Interative Dashboard Report.
+####  Vinicius Guerra e Ribas
+###### [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BGENERATION-SECTOR-DASHBOARD-REPORT%5D%20-%20Contact) │ [🎯 Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │ [😸 GitHub](https://github.com/viniciusgribas) 
+---
+
+[V: 1.504240]
 """)
