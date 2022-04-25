@@ -121,8 +121,8 @@ st.write("""
 with st.expander("❗ GUIDE ❗"):
      st.write("""
      > ↖️ Explore the **⚙️ Tools** in the top left corner.
-    - 📣 In **🧰 General Tools** you can view the dataset, the metadata information and the basics relationships between categorical variables.
-    
+    - 📣 In **🧰 General Tools** you can view the database, metadata information and the basics relationships between categorical variables.
+
     - 📣 The **💡 Insight's & Analysis Tools** tab contains interactive charts divided into two sections:
         - The "General Analysis" contains analyses that make sense for this business type.
         - The "Try Analysis" tab allows the user to input variables.
@@ -741,7 +741,7 @@ st.sidebar.write("""
 #### [*Please feel free to contact me.*](mailto:viniciusgribas@gmail.com?Subject=%5B-GENERATION-SECTOR-DASHBOARD%5D%20-%20Insights)
 ---
 #### Brazil Generation Sector Dashboard
-##### A Interative Dashboard Report.
+##### A Interactive Dashboard Report.
 ####  Vinicius Guerra e Ribas
 ###### [📧 E-mail](mailto:viniciusgribas@gmail.com?Subject=%5BGENERATION-SECTOR-DASHBOARD-REPORT%5D%20-%20Contact) │ [🎯 Linkedin](https://www.linkedin.com/in/vinicius-guerra-e-ribas/) │ [😸 GitHub](https://github.com/viniciusgribas) 
 ---
