@@ -28,6 +28,7 @@
 
 ##  Data Manipulation libraries
 
+
 from distutils import text_file
 import pandas as pd
 
@@ -47,7 +48,10 @@ import plotly.graph_objects as go
 # Create a Dashboard APP
 import streamlit as st
 
-
+st.set_page_config(
+page_title = 'DASHBOARD_REPORT_GENBR-viniciusgribas',
+page_icon='⚡'
+)
 
 # Making a load_data() func to improve performance
 
