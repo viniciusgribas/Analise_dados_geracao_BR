@@ -1,0 +1,1 @@
+web: sh setup.sh && streamlit run Dashboard_Geracao_Brasil_app.py
