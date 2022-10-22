@@ -1,8 +1,7 @@
 
-
 ---
 
-# Vinicius Guerra e Ribas -  [Data Engineer](https://www.linkedin.com/in/vinicius-guerra-e-ribas/)
+# [Vinicius Guerra e Ribas -  Data Engineer](https://www.linkedin.com/in/vinicius-guerra-e-ribas/)
 [Energy Engineer (UnB)](https://www.unb.br/) │ [Data Scientist and Analytics (USP)](https://www5.usp.br/)
 
 
