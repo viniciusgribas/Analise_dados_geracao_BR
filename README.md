@@ -81,5 +81,4 @@
 
 
 ---
-![image](https://user-images.githubusercontent.com/63691577/161199734-349a05b4-dfd6-40af-898a-7a08a3fd513d.png)
 
